@@ -12,9 +12,15 @@ export const appConfig = (app: Application) => {
 
   app.get("/", (req: Request, res: Response) => {
     try {
-      return res.status(200).json({
-        message: "API is ready!!!",
-      });
+      //   return res.status(200).json({
+      //     message: "API is ready!!!",
+      //   });
+
+      const optionData = {
+        url: `http:google.com`,
+      };
+
+      return res.status(200).render("verifyNote", optionData);
     } catch (error: any) {
       return res.status(404).json({
         message: "error getting api",
